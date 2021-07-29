@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\BunnyAnimator.cs" />
      <Compile Include="Assets\FoxAnimator.cs" />
+     <Compile Include="Assets\LevelLoader.cs" />
      <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
      <Compile Include="Assets\RootVegetables\Scripts\Rotate.cs" />
      <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
