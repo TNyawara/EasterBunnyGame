@@ -14,7 +14,7 @@ public class BunnyAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W)){
+        if(Input.GetKey(KeyCode.UpArrow)){
 anim.Play("Running");
 }
 if(Input.GetKey(KeyCode.A)){

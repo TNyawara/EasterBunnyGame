@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Level 2(Bridge).unity
+- path: Assets/Scenes/Level 3(House&Fox).unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
