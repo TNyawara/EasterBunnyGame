@@ -41,7 +41,11 @@ public class PlayerMovement : MonoBehaviour
                 rabbit.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
             }
         }
-        if(Input.GetKey(KeyCode.J)){
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            rabbit.transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+        }
+            if (Input.GetKey(KeyCode.J)){
             MainCamera.enabled = false;
             AerialCamera.enabled = true;
             SideCamera.enabled = false;
