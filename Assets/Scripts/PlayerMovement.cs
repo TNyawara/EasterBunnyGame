@@ -13,28 +13,33 @@ public class PlayerMovement : MonoBehaviour
     public Camera MainCamera;
     public Camera AerialCamera;
     public Camera SideCamera;
-    void Start()
-    {
-        
-    }
+    public float moveSpeed = 3;
+    public float horizontalSpeed = 4;
 
-    // Update is called once per frame
      void Update() {
-        //if (isMoving) {
-         //   return;
-        //}
+        MainCamera.enabled = true;
+        AerialCamera.enabled = false;
+        SideCamera.enabled = false;
+        rabbit.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
         if (Input.GetKey(KeyCode.UpArrow)) {
             rabbit.transform.Translate(0f,0f,0.5f);
         }
         if (Input.GetKey(KeyCode.DownArrow)) {
-           rabbit.transform.Translate(0f,0f,-0.5f);
+            rabbit.transform.Translate(0f,0f,-0.5f);
         }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            rabbit.transform.Translate(-0.5f,0f,0f);
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+            if(rabbit.transform.position.x > LevelBoundary.leftSide)
+            {
+                rabbit.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+            }
+            
         }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            rabbit.transform.Translate(0.5f,0f,0f);
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+            if(rabbit.transform.position.x < LevelBoundary.rightSide)
+            {
+                rabbit.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+            }
         }
         if(Input.GetKey(KeyCode.J)){
             MainCamera.enabled = false;
