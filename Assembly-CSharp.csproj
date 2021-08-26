@@ -58,6 +58,7 @@
      <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
      <Compile Include="Assets\RootVegetables\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\BunnyAnimator.cs" />
+     <Compile Include="Assets\Scripts\CollectCoin.cs" />
      <Compile Include="Assets\Scripts\EasterEggIdle.cs" />
      <Compile Include="Assets\Scripts\Environment\EndlessGenerator.cs" />
      <Compile Include="Assets\Scripts\Environment\LevelBoundary.cs" />
