@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rabbit: {fileID: 317496659}
-  MainCamera: {fileID: 963194227}
+  MainCamera: {fileID: 0}
   AerialCamera: {fileID: 0}
   SideCamera: {fileID: 0}
   moveSpeed: 3
@@ -5353,6 +5353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 881237354}
   - component: {fileID: 881237353}
+  - component: {fileID: 881237355}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -5388,6 +5389,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881237355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881237352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f68a6f717dd19744a7ea18d197d37e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  section:
+  - {fileID: 1188353314}
+  - {fileID: 1579289174}
+  - {fileID: 1305998950}
+  zPos: 48
+  creatingSection: 0
+  secNum: 0
 --- !u!1001 &883011259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10499,7 +10519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579289174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 397}
+  m_LocalPosition: {x: 0, y: 0, z: 448}
   m_LocalScale: {x: 40, y: 1, z: 200}
   m_Children:
   - {fileID: 415506211}
