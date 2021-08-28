@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     //public int speed=30;
     //bool isMoving=false;
     public GameObject player;
-
+    public GameObject doozy;
     public Animator anim;
     public Camera MainCamera;
     public Camera AerialCamera;
@@ -22,17 +22,19 @@ public class PlayerMovement : MonoBehaviour
         SideCamera.enabled = false;
        // player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
-        if (Input.GetKey(KeyCode.UpArrow)) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
             player.transform.Translate(0f,0f,0.5f);
+            doozy.transform.Translate(0f, 0f, 0.5f);
+            MainCamera.transform.Translate(0f, 0f, 0.5f);
             anim.Play("Running");
         }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            player.transform.Translate(0f,0f,-0.5f);
-        }
+
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
             if(player.transform.position.x > LevelBoundary.leftSide)
             {
                 player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
             }
             
         }
@@ -40,13 +42,20 @@ public class PlayerMovement : MonoBehaviour
             if(player.transform.position.x < LevelBoundary.rightSide)
             {
                 player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
             }
         }
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+
+        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W))
         {
-            //player.transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+            anim.Play("Jumping");
+            player.transform.Translate(0f, 1f, 0f);
+            MainCamera.transform.Translate(0f, 1f, 0f);
+            StartCoroutine(Jumping());   
         }
-            if (Input.GetKey(KeyCode.J)){
+
+        if (Input.GetKey(KeyCode.J)){
             MainCamera.enabled = false;
             AerialCamera.enabled = true;
             SideCamera.enabled = false;
@@ -62,6 +71,13 @@ public class PlayerMovement : MonoBehaviour
             AerialCamera.enabled = false;
             SideCamera.enabled = true;
         }
+    }
+
+    IEnumerator Jumping()
+    {
+        yield return new WaitForSeconds(0.6f);
+        MainCamera.transform.Translate(0f, -1f, 0f);
+        player.transform.Translate(0f, -1f, 0f);
     }
 
   

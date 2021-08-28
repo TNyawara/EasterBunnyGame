@@ -5,10 +5,13 @@ using UnityEngine;
 public class CollectCoin : MonoBehaviour
 {
     public AudioSource coinFX;
-
+    public score score;
     void OnTriggerEnter(Collider other)
     {
-        coinFX.Play();
-        this.gameObject.SetActive(false);
+        
+            Debug.Log("Collide");
+            coinFX.Play();
+            this.gameObject.SetActive(false);
+            score.setScore(5);
     }
 }
