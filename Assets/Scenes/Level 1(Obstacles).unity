@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4455843, g: 0.718946, b: 0.73046434, a: 1}
+  m_IndirectSpecularColor: {r: 0.44558495, g: 0.71894646, b: 0.7304657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1590,7 +1590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177186690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.75, y: 1.57, z: -44.85}
+  m_LocalPosition: {x: -4.7, y: 1.57, z: -44.85}
   m_LocalScale: {x: 1.2794, y: 1.2546, z: 1.342893}
   m_Children:
   - {fileID: 963194228}
@@ -6772,7 +6772,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788010053}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 833fbd8588cc2c3d893d551edcb8cd5b, type: 3}
   m_Name: 
@@ -6783,7 +6783,7 @@ MonoBehaviour:
   MainCamera: {fileID: 963194227}
   AerialCamera: {fileID: 1554594910}
   SideCamera: {fileID: 1913524807}
-  moveSpeed: 3
+  moveSpeed: 6
   horizontalSpeed: 4
 --- !u!4 &788010056 stripped
 Transform:
@@ -6799,10 +6799,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788010053}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1001 &792245973
@@ -9435,7 +9435,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098274021}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.032534447
   m_Height: 0.020218275
@@ -9454,7 +9454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinFX: {fileID: 878709280}
-  score: {fileID: 0}
+  score: {fileID: 525977526}
 --- !u!4 &1098274025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521874486784168, guid: 01348926c7cbb3347a006c37204131c3,
@@ -16307,7 +16307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953361614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23, y: 0.38, z: -3.386}
+  m_LocalPosition: {x: 2.02, y: 0.38, z: -3.386}
   m_LocalScale: {x: 0.5, y: 0.8, z: 0.5}
   m_Children: []
   m_Father: {fileID: 881237354}
@@ -17770,6 +17770,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Egg: {fileID: 1953361614}
+  EggCount: 0
+  xPosition: 0
+  zPosition: 0
 --- !u!4 &2126467103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258,

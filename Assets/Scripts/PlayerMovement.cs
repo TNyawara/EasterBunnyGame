@@ -13,14 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public Camera MainCamera;
     public Camera AerialCamera;
     public Camera SideCamera;
-    public float moveSpeed = 3;
+    public float moveSpeed = 10;
     public float horizontalSpeed = 4;
 
      void Update() {
         MainCamera.enabled = true;
         AerialCamera.enabled = false;
         SideCamera.enabled = false;
-       // player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+       player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
             player.transform.Translate(0f,0f,0.5f);
