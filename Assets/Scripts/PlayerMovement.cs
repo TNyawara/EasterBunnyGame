@@ -15,17 +15,27 @@ public class PlayerMovement : MonoBehaviour
     public Camera SideCamera;
     public float moveSpeed = 10;
     public float horizontalSpeed = 4;
+    private Rigidbody rb;
+    public Vector3 startingPoint;
+    public Vector3 currentPosition;
+    void Start()
+    {
+        rb = doozy.GetComponent<Rigidbody>();
+        startingPoint = doozy.transform.position;
+    }
 
      void Update() {
         MainCamera.enabled = true;
         AerialCamera.enabled = false;
         SideCamera.enabled = false;
+        currentPosition = doozy.transform.position;
        //player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
-            player.transform.Translate(0f,0f,0.5f);
-            doozy.transform.Translate(0f,0f,0.5f);
-            MainCamera.transform.Translate(0f, 0f, 0.5f);
+            //player.transform.Translate(0f,0f,0.5f);
+            player.transform.Translate(Vector3.forward * Time.deltaTime * 20, Space.World);
+           // doozy.transform.Translate(0f,0f,0.5f);
+          //  MainCamera.transform.Translate(0f, 0f, 0.5f);
             anim.Play("Running");
         }
 
@@ -50,8 +60,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W))
         {
             anim.Play("Jumping");
-            player.transform.Translate(0f, 1f, 0f);
-            MainCamera.transform.Translate(0f, 1f, 0f);
+            //player.transform.Translate(0f, 1f, 0f);
+            //MainCamera.transform.Translate(0f, 1f, 0f);
+            //rb.AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
+            player.transform.Translate(Vector3.up * Time.deltaTime * 25, Space.World);
             StartCoroutine(Jumping());   
         }
 
@@ -75,9 +87,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Jumping()
     {
-        yield return new WaitForSeconds(0.6f);
-        MainCamera.transform.Translate(0f, -1f, 0f);
-        player.transform.Translate(0f, -1f, 0f);
+        yield return new WaitForSeconds(1);
+        player.transform.Translate(Vector3.up * Time.deltaTime * 25 *-1, Space.World);
     }
 
   

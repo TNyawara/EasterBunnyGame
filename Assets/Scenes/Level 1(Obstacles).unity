@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4455843, g: 0.718946, b: 0.73046434, a: 1}
+  m_IndirectSpecularColor: {r: 0.44558495, g: 0.71894646, b: 0.7304657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -610,6 +610,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56583387}
   m_CullTransparentMesh: 0
+--- !u!1 &59993798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258,
+    type: 3}
+  m_PrefabInstance: {fileID: 903448665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &59993801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59993798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &63071613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1950871307682000, guid: 01348926c7cbb3347a006c37204131c3,
@@ -1721,6 +1740,8 @@ MonoBehaviour:
   SideCamera: {fileID: 1913524807}
   moveSpeed: 4
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!64 &177186692
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7559,6 +7580,8 @@ MonoBehaviour:
   SideCamera: {fileID: 0}
   moveSpeed: 10
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &788010056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53a26f08e681d4803909681a4630ebea,
@@ -9431,6 +9454,8 @@ MonoBehaviour:
   SideCamera: {fileID: 1913524807}
   moveSpeed: 3
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11445,7 +11470,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1188353316
@@ -11603,7 +11628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0a1cade8f3785a5498483caf954be128, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.22333434
+      value: -0.2228
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0a1cade8f3785a5498483caf954be128, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12986,6 +13011,11 @@ PrefabInstance:
     - target: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136213828768348902, guid: eded051879df4c147b9010199d240258,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eded051879df4c147b9010199d240258, type: 3}
@@ -14758,6 +14788,8 @@ MonoBehaviour:
   SideCamera: {fileID: 1913524807}
   moveSpeed: 3
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1554594913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15613,6 +15645,8 @@ MonoBehaviour:
   SideCamera: {fileID: 1913524807}
   moveSpeed: 3
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!64 &1599784148
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17339,6 +17373,8 @@ MonoBehaviour:
   SideCamera: {fileID: 1913524807}
   moveSpeed: 3
   horizontalSpeed: 4
+  startingPoint: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1917568284
 PrefabInstance:
   m_ObjectHideFlags: 0
