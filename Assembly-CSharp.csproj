@@ -40,6 +40,7 @@
      <Compile Include="Assets\RootVegetables\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\BunnyAnimator.cs" />
      <Compile Include="Assets\Scripts\CollectCoin.cs" />
+     <Compile Include="Assets\Scripts\CollectEgg.cs" />
      <Compile Include="Assets\Scripts\EasterEggIdle.cs" />
      <Compile Include="Assets\Scripts\EggInstantiator.cs" />
      <Compile Include="Assets\Scripts\Environment\EndlessGenerator.cs" />
