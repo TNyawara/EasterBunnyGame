@@ -20,11 +20,11 @@ public class PlayerMovement : MonoBehaviour
         MainCamera.enabled = true;
         AerialCamera.enabled = false;
         SideCamera.enabled = false;
-       player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+       //player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
             player.transform.Translate(0f,0f,0.5f);
-            doozy.transform.Translate(0f, 0f, 0.5f);
+            doozy.transform.Translate(0f,0f,0.5f);
             MainCamera.transform.Translate(0f, 0f, 0.5f);
             anim.Play("Running");
         }

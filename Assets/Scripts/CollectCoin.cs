@@ -9,7 +9,7 @@ public class CollectCoin : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
-            Debug.Log("Collide");
+            //Debug.Log("Collide");
             coinFX.Play();
             this.gameObject.SetActive(false);
             score.setScore(5);
