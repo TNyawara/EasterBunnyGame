@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera SideCamera;
     public int current_level;
     public Level level;
+    bool isDead;
     public float moveSpeed = 10;
     public float horizontalSpeed = 4;
     private Rigidbody rb;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = doozy.GetComponent<Rigidbody>();
         startingPoint = doozy.transform.position;
+        isDead = false;
     }
 
      void Update() {
@@ -33,68 +35,77 @@ public class PlayerMovement : MonoBehaviour
         SideCamera.enabled = false;
         currentPosition = doozy.transform.position;
         current_level = level.getLevel();
-        if(current_level == 3)
+        if (isDead == false)
         {
-            if(Input.GetKeyDown(KeyCode.Return))
+            if (current_level == 3)
             {
-                Rigidbody rb = Instantiate(stone, transform.position, transform.rotation) as Rigidbody;
-                rb.AddForce(transform.forward * 100);
-                rb.AddForce(transform.up * 80);
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    Rigidbody rb = Instantiate(stone, transform.position, transform.rotation) as Rigidbody;
+                    rb.AddForce(transform.forward * 100);
+                    rb.AddForce(transform.up * 80);
+                }
             }
-        }
-       //player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+            //player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
-            //player.transform.Translate(0f,0f,0.5f);
-            player.transform.Translate(Vector3.forward * Time.deltaTime * 20, Space.World);
-           // doozy.transform.Translate(0f,0f,0.5f);
-          //  MainCamera.transform.Translate(0f, 0f, 0.5f);
-            anim.Play("Running");
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
-            if(player.transform.position.x > LevelBoundary.leftSide)
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
-                doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
-                MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                //player.transform.Translate(0f,0f,0.5f);
+                player.transform.Translate(Vector3.forward * Time.deltaTime * 20, Space.World);
+                // doozy.transform.Translate(0f,0f,0.5f);
+                //  MainCamera.transform.Translate(0f, 0f, 0.5f);
+                anim.Play("Running");
             }
-            
-        }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
-            if(player.transform.position.x < LevelBoundary.rightSide)
+
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
-                doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
-                MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                if (player.transform.position.x > LevelBoundary.leftSide)
+                {
+                    player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                    doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                    MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed);
+                }
+
             }
-        }
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+            {
+                if (player.transform.position.x < LevelBoundary.rightSide)
+                {
+                    player.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                    doozy.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                    MainCamera.transform.Translate(Vector3.left * Time.deltaTime * horizontalSpeed * -1);
+                }
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W))
-        {
-            anim.Play("Jumping");
-            //player.transform.Translate(0f, 1f, 0f);
-            //MainCamera.transform.Translate(0f, 1f, 0f);
-            //rb.AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
-            player.transform.Translate(Vector3.up * Time.deltaTime * 25, Space.World);
-            StartCoroutine(Jumping());   
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W))
+            {
+                anim.Play("Jumping");
+                //player.transform.Translate(0f, 1f, 0f);
+                //MainCamera.transform.Translate(0f, 1f, 0f);
+                //rb.AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
+                player.transform.Translate(Vector3.up * Time.deltaTime * 25, Space.World);
+                StartCoroutine(Jumping());
+            }
 
-        if (Input.GetKey(KeyCode.J)){
-            MainCamera.enabled = false;
-            AerialCamera.enabled = true;
-            SideCamera.enabled = false;
-        
-        }
-        if(Input.GetKey(KeyCode.K)){
-            MainCamera.enabled = true;
-            AerialCamera.enabled = false;
-            SideCamera.enabled = false;
-        }
-        if(Input.GetKey(KeyCode.L)){
-            MainCamera.enabled = false;
-            AerialCamera.enabled = false;
-            SideCamera.enabled = true;
+            if (Input.GetKey(KeyCode.J))
+            {
+                MainCamera.enabled = false;
+                AerialCamera.enabled = true;
+                SideCamera.enabled = false;
+
+            }
+            if (Input.GetKey(KeyCode.K))
+            {
+                MainCamera.enabled = true;
+                AerialCamera.enabled = false;
+                SideCamera.enabled = false;
+            }
+            if (Input.GetKey(KeyCode.L))
+            {
+                MainCamera.enabled = false;
+                AerialCamera.enabled = false;
+                SideCamera.enabled = true;
+            }
         }
     }
 
@@ -104,6 +115,10 @@ public class PlayerMovement : MonoBehaviour
         player.transform.Translate(Vector3.up * Time.deltaTime * 25 *-1, Space.World);
     }
 
-  
+    public void Die()
+    {
+        isDead = true
+;        anim.Play("Dead");
+    }
    
 }
