@@ -10,9 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player;
     public GameObject doozy;
     public Animator anim;
+    public Rigidbody stone;
     public Camera MainCamera;
     public Camera AerialCamera;
     public Camera SideCamera;
+    public int current_level;
+    public Level level;
     public float moveSpeed = 10;
     public float horizontalSpeed = 4;
     private Rigidbody rb;
@@ -29,6 +32,16 @@ public class PlayerMovement : MonoBehaviour
         AerialCamera.enabled = false;
         SideCamera.enabled = false;
         currentPosition = doozy.transform.position;
+        current_level = level.getLevel();
+        if(current_level == 3)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                Rigidbody rb = Instantiate(stone, transform.position, transform.rotation) as Rigidbody;
+                rb.AddForce(transform.forward * 100);
+                rb.AddForce(transform.up * 80);
+            }
+        }
        //player.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {

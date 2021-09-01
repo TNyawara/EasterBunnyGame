@@ -1,17 +1,15 @@
 ﻿<Properties StartupConfiguration="{97B66483-7B60-15DF-4436-DA8F10DA25EE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LevelShift.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Level.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="36" Column="21" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BunnyAnimator.cs" Line="22" Column="2" />
-      <File FileName="Assets/Scripts/CollectCoin.cs" Line="15" Column="13" />
-      <File FileName="Assets/score.cs" Line="13" Column="6" />
-      <File FileName="Assets/Level.cs" Line="21" Column="25" />
-      <File FileName="Assets/LevelShift.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/CollectCoin.cs" />
+      <File FileName="Assets/Scripts/Level.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b5585252-6125-48ee-bbd0-a30477f8f7de" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="40b3081f-8a91-42e1-ba18-ceb8be3413a8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -8,7 +8,7 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        current_level = 1;
+        current_level = 3;
         level_text.text = current_level.ToString();
     }
 
