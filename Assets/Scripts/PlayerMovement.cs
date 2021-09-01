@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //bool isMoving=false;
     public GameObject player;
     public GameObject doozy;
+    public GameObject game_over;
     public Animator anim;
     public Rigidbody stone;
     public Camera MainCamera;
@@ -117,8 +118,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        isDead = true
-;        anim.Play("Dead");
+        isDead = true;
+        anim.Play("Dead");
+        game_over.SetActive(true);
     }
    
 }

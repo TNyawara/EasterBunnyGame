@@ -1734,6 +1734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 177186690}
   doozy: {fileID: 788010053}
+  game_over: {fileID: 609697705}
   anim: {fileID: 1599784146}
   stone: {fileID: 368228868}
   MainCamera: {fileID: 963194227}
@@ -7802,6 +7803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 177186690}
   doozy: {fileID: 788010053}
+  game_over: {fileID: 0}
   anim: {fileID: 1599784146}
   stone: {fileID: 0}
   MainCamera: {fileID: 963194227}
@@ -9712,6 +9714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 177186690}
   doozy: {fileID: 788010053}
+  game_over: {fileID: 0}
   anim: {fileID: 1599784146}
   stone: {fileID: 0}
   MainCamera: {fileID: 963194227}
@@ -15049,6 +15052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   doozy: {fileID: 0}
+  game_over: {fileID: 0}
   anim: {fileID: 0}
   stone: {fileID: 0}
   MainCamera: {fileID: 963194227}
@@ -15909,6 +15913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1599784145}
   doozy: {fileID: 1599784145}
+  game_over: {fileID: 0}
   anim: {fileID: 1599784146}
   stone: {fileID: 0}
   MainCamera: {fileID: 963194227}
@@ -17640,6 +17645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   doozy: {fileID: 0}
+  game_over: {fileID: 0}
   anim: {fileID: 0}
   stone: {fileID: 0}
   MainCamera: {fileID: 963194227}
